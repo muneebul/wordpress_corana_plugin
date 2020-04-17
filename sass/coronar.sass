@@ -1,0 +1,190 @@
+/**
+ * COVID19 Coronavirus Visual Dashboard
+ * Exclusively on Envato Market: https://1.envato.market/coronar
+ *
+ * @encoding        UTF-8
+ * @version         1.0.7
+ * @copyright       Copyright (C) 2018 - 2020 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Alexander Khmelnitskiy (info@alexander.khmelnitskiy.ua), Dmitry Merkulov (dmitry@merkulov.design)
+ * @support         help@merkulov.design
+ **/
+
+// Country table
+.mdp-coronar-table-box
+
+  .dataTables_filter
+    width: 100%
+
+    label
+      margin: 0
+
+    input
+      margin: 0
+      outline: none
+
+  table
+    border-collapse: separate
+    border: none
+    overflow: visible
+
+    *
+      border: none
+      white-space: nowrap
+
+    td:not(.mdp-coronar-country):not(.mdp-coronar-province)
+      text-align: center
+
+    th.mdp-coronar-country,
+    th.mdp-coronar-province
+      text-align: left
+
+    &.dataTable
+
+      th
+        background-position-x: calc( 100% + 5px )
+
+  tbody
+
+    tr
+      animation: mdp-coronar-fade
+      animation-duration: .25s
+      animation-fill-mode: both
+      animation-timing-function: ease-in-out
+      opacity: 0
+
+      &:hover
+        box-shadow: 0 10px 1px -6px rgba(0,0,0,0.08), 0 1px 21px 0 rgba(0,0,0,0.1)
+
+    @for $i from 1 through 200
+
+      tr:nth-child(#{$i})
+        animation-delay: .1s + $i * .05s
+
+  thead
+
+    th
+      text-align: center
+
+    th.mdp-coronar-country,
+    th.mdp-coronar-province
+      text-align: left
+      padding-left: 0 !important
+
+  img
+    display: initial
+
+@keyframes mdp-coronar-fade
+
+  from
+    opacity: 0
+    transform: translateY(40px)
+
+  to
+    opacity: 1
+    transform: translateY(0)
+
+.mdp-coronar-bottom
+  margin-top: 12px
+
+.ct-golden-section
+
+  &:after,
+  &:before
+    display: none !important
+
+.mdp-coronar-cart-charts
+
+  width: 100%
+  position: relative
+
+  .mdp-coronar-chart-confirmed,
+  .mdp-coronar-chart-deaths,
+  .mdp-coronar-chart-recovered
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 200px
+
+table.dataTable thead .mdp-coronar-charts-th
+  background-image: none
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]
+  position: relative
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child
+  position: static
+
+/** Google maps tooltip
+
+.google-visualization-tooltip
+  min-width: 240px
+  border: none
+  box-shadow: 0 4px 1px -6px rgba(0,0,0,0.02), 0 1px 10px 0 rgba(0,0,0,0.11)
+
+  ul.google-visualization-tooltip-item-list
+    margin: 0
+    list-style: none
+
+    li
+      list-style: none
+
+    li:first-child
+      margin-top: 0
+      padding: 0
+
+    li:last-child
+      margin-bottom: 0
+      padding: 0
+
+/** Coronar cards
+
+.mdp-coronar-country-card
+  display: flex
+
+  .mdp-coronar-amount
+    white-space: nowrap
+
+  .mdp-coronar-flag-country
+    display: flex
+    flex-direction: column
+
+    span.mdp-coronar-amount
+      white-space: initial
+      word-break: initial
+      word-wrap: break-word
+
+  .mdp-coronar-stats
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+    div
+      flex: 1
+
+      &.mdp-coronar-chart-confirmed,
+      &.mdp-coronar-chart-deaths,
+      &.mdp-coronar-chart-recovered
+        flex: 2
+
+  span
+    display: block
+    word-break: initial
+    word-wrap: break-word
+
+@media screen and (max-width: 480px)
+
+  .mdp-coronar-country-card
+    flex-flow: column
+
+  .mdp-coronar-flag-country
+    padding-bottom: 0 !important
+
+@media screen and (max-width: 320px)
+
+  .mdp-coronar-country-card
+
+    .mdp-coronar-stats
+      flex-flow: column

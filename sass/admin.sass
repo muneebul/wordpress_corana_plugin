@@ -1,0 +1,76 @@
+/**
+ * COVID19 Coronavirus Visual Dashboard
+ * Exclusively on Envato Market: https://1.envato.market/coronar
+ *
+ * @encoding        UTF-8
+ * @version         1.0.7
+ * @copyright       Copyright (C) 2018 - 2020 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @license         Envato License https://1.envato.market/KYbje
+ * @contributors    Alexander Khmelnitskiy (info@alexander.khmelnitskiy.ua), Dmitry Merkulov (dmitry@merkulov.design)
+ * @support         help@merkulov.design
+ **/
+
+.mdc-switch-label
+  font-size: 14px
+
+.mdp-tab-general
+
+  .form-table
+
+    tr
+
+      &:nth-child(1)
+        border-bottom: 1px solid #ccc
+
+        td,
+        th
+          padding-bottom: 32px
+
+        .mdc-text-field-helper-line
+          padding-left: 0
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4)
+
+        td
+          padding-top: 32px
+          padding-bottom: 0
+
+        .mdc-text-field-helper-line
+          padding-left: 52px
+
+      &:nth-child(4)
+        td
+          padding-bottom: 16px
+
+.mdp-tab-style
+
+  .form-table
+
+    tr:nth-child(5)
+
+      th
+        padding-top: 17px
+
+      .mdc-text-field-helper-line
+        padding-left: 52px
+
+
+// Reset button spin animation.
+.mdp-spin
+  .material-icons
+    -webkit-animation: mdp-rotate 2s infinite linear
+    animation: mdp-rotate 2s infinite linear
+
+@-webkit-keyframes mdp-rotate
+  0%
+    -webkit-transform: rotate(0)
+  100%
+    -webkit-transform: rotate(359deg)
+
+@keyframes mdp-rotate
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(359deg)
